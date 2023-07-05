@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import './App.css'
+import { unstable_HistoryRouter as HistoryRouter, Route, Routes } from 'react-router-dom'
+import Main from './pages/main/Main.js'
+import Login from './pages/login/Login'
+import { AuthComponent } from './components/Auth/AuthComponent'
+import { history } from "./utils/history"
+import Monoply from './components/Monoply/Monoply'
+import Test from './pages/test/test'
+function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HistoryRouter history={history}>
+        <Routes>
+          <Route path='/' element={<AuthComponent><Main /></AuthComponent>}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/test' element={<Test />}></Route>
+        </Routes>
+      </HistoryRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

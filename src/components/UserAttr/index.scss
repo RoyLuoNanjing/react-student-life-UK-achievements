@@ -1,0 +1,25 @@
+.attrBox {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.attrPattern {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 300px;
+  height: 200px;
+  background-image: url('../../assets/images/userAttrPictures/London.png');
+  background-size: cover;
+  background-position: right;
+}
+
+.attrList {
+  width: 200px;
+}
+
+.attrRadar {
+  width: 100px;
+}

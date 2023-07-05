@@ -1,0 +1,280 @@
+.ant-radio-group {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.ant-radio-button-wrapper {
+  height: 150px;
+  margin: 5px;
+  font-weight: bolder;
+  font-size: medium;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid pink;
+  text-orientation: upright;
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+
+  :hover {
+    color: rgb(213, 78, 100);
+    border-color: pink;
+  }
+
+  :before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    color: rgb(213, 78, 100);
+  }
+}
+
+.ant-radio-button:hover {
+  color: rgb(213, 78, 100);
+}
+
+.ant-radio-button-wrapper-checked {
+  width: 40%;
+  font-size: 30px;
+  color: rgb(204, 52, 77);
+  background-color: pink;
+  border-color: pink !important;
+
+  :hover::before {
+    width: 2px;
+    background-color: pink;
+    border-color: pink;
+  }
+
+  :not(.ant-radio-button-wrapper-disabled) {
+    color: pink;
+    border-color: pink;
+  }
+
+  :active {
+    color: rgb(213, 78, 100);
+  }
+
+  :not(.ant-radio-button-wrapper-disabled):first-child {
+    border-color: pink;
+  }
+  :not(.ant-radio-button-wrapper-disabled):hover {
+    color: pink;
+    border-color: pink;
+  }
+}
+
+.ant-radio-button-wrapper:not(:first-child):hover::before {
+  position: absolute;
+  inset-block-start: -1px;
+  inset-inline-start: -1px;
+  display: block;
+  box-sizing: content-box;
+  width: 2px;
+  height: 100%;
+  padding-block: 1px;
+  padding-inline: 0;
+  background-color: pink;
+  content: '';
+}
+
+.ant-radio-button-checked {
+  //width: 100px;
+  height: 100px;
+  font-size: 100px;
+}
+
+.radio-group {
+  //background-image: url('../../assets/images/filterBg/Manchester.jpg');
+}
+
+.ant-radio-button-wrapper-disabled {
+  color: pink;
+  border-color: pink;
+  background-color: pink;
+}
+
+.ant-radio-button-wrapper-checked,
+.ant-radio-button :hover {
+  color: rgb(213, 78, 100);
+  border-color: pink;
+}
+
+.ant-radio-button-wrapper-checked:not(
+    .ant-radio-button-wrapper-disabled
+  )::before {
+  background-color: pink;
+  color: rgb(213, 78, 100);
+  z-index: 200;
+  width: 0px;
+}
+//方案一
+// .card {
+//   overflow: hidden;
+//   z-index: 5;
+//   touch-action: none;
+//   border-radius: 5% / 3.5%;
+//   z-index: 10;
+// }
+
+// .card:after {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   top: 0;
+//   background-repeat: no-repeat;
+//   opacity: 0.5;
+//   mix-blend-mode: color-dodge;
+//   transition: all 0.33s ease;
+// }
+
+// .card:before {
+//   background-position: 50% 50%;
+//   //background-size: 100% 100%;
+//   background-image: linear-gradient(
+//     115deg,
+//     transparent 0%,
+//     var(--color1) 25%,
+//     transparent 47%,
+//     transparent 53%,
+//     var(--color2) 75%,
+//     transparent 100%
+//   );
+//   opacity: 0.5;
+//   filter: brightness(0.5) contrast(1);
+//   z-index: 1;
+// }
+
+// .card:after {
+//   opacity: 1;
+//   background-image: url('https://assets.codepen.io/13471/sparkles.gif'),
+//     url(https://assets.codepen.io/13471/holo.png),
+//     linear-gradient(
+//       125deg,
+//       #ff008450 15%,
+//       #fca40040 30%,
+//       #ffff0030 40%,
+//       #00ff8a20 60%,
+//       #00cfff40 70%,
+//       #cc4cfa50 85%
+//     );
+//   background-position: 50% 50%;
+//   background-size: 160%;
+//   background-blend-mode: normal;
+//   z-index: 1;
+//   filter: brightness(1) contrast(1);
+//   transition: all 0.33s ease;
+//   mix-blend-mode: color-dodge;
+//   opacity: 0.75;
+// }
+
+// a {
+//   position: relative;
+//   z-index: 3; /* Set a high z-index value to bring the link to the top */
+// }
+
+//方案二
+.card {
+  --color1: rgb(0, 231, 255);
+  --color2: rgb(255, 0, 231);
+  background-color: #211799;
+  // background-image: url(https://supapongai.com/wp-content/uploads/2021/05/Borreload-Savage-Dragon-Fullart.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%/3.5%;
+  box-shadow: -13px -13px 13px -15px var(--color1),
+    13px 13px 13px -15px var(--color2), 0 0 4px 2px rgba(255, 255, 255, 0.5),
+    0 35px 25px -15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 20px 10px;
+  -webkit-animation: holoCard 15s ease infinite;
+  animation: holoCard 15s ease infinite;
+  transform-origin: center;
+  z-index: 10;
+  overflow: hidden;
+  transform: translate3d(0, 0, -1px);
+}
+.card:before,
+.card:after {
+  content: '';
+  opacity: 0.1;
+  mix-blend-mode: screen;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-repeat: no-repeat;
+}
+
+.card:before {
+  background-position: 50% 50%;
+  background-size: 300% 300%;
+  -webkit-animation: holoGradient 15s ease infinite both;
+  animation: holoGradient 15s ease infinite both;
+  background-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    var(--color1) 30%,
+    transparent 47.5%,
+    transparent 52.5%,
+    var(--color2) 70%,
+    transparent 100%
+  );
+}
+
+.card:after {
+  opacity: 1;
+  background-image: url('https://assets.codepen.io/13471/sparkles.gif');
+  background-position: center;
+  background-size: 160%;
+  z-index: 2;
+  -webkit-animation: holoSparkle 15s ease infinite both;
+  animation: holoSparkle 15s ease infinite both;
+  filter: brightness(1);
+  transition: filter 0.5s ease;
+}
+
+.card.active {
+  -webkit-animation: none;
+  animation: none;
+}
+
+.card.active:before {
+  opacity: 1;
+  -webkit-animation: none;
+  animation: none;
+  transition: none;
+  background-image: linear-gradient(
+    115deg,
+    transparent 30%,
+    var(--color1) 48%,
+    var(--color2) 53%,
+    transparent 70%
+  );
+  filter: opacity(0.66);
+  mix-blend-mode: screen;
+}
+
+.card.active:before,
+.card.active:after {
+  -webkit-animation: none;
+  animation: none;
+}
+
+.card.active:after {
+  filter: brightness(2.5);
+  mix-blend-mode: screen;
+}
