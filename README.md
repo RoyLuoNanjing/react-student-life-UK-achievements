@@ -1,6 +1,6 @@
 # A British culture-based Collection Game implemented by React + AWS serverless technology
-### I created this to encourage Chinese students who study in the UK to actively go out to explore this new world
-Here is the link:http://my-student-project.s3-website.eu-west-2.amazonaws.com/
+I created this to encourage Chinese students who study in the UK to actively go out to explore this new world
+* Here is the link:http://my-student-project.s3-website.eu-west-2.amazonaws.com/
 
 ## Log in (Username:dearmanager, Password : Thankyou123!)
 Some UI elements here are created by AIGC, Midjourney, for example, that London landscape and UK flags!!!
